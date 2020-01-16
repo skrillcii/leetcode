@@ -1,9 +1,10 @@
 
-def numIslands(self, grid):
-    """
-    :type grid: List[List[str]]
-    :rtype: int
+class Solution:
+    def numIslands(self, grid:list):
         """
+        :type grid: List[List[str]]
+        :rtype: int
+            """
 
 
 if __name__ == '__main__':
@@ -13,4 +14,7 @@ if __name__ == '__main__':
             [0,0,0,0,0],
             ]
     print(nums)
+    solution = Solution()
+    answer = solution.numIslands(nums)
+    print(answer)
 

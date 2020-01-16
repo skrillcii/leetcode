@@ -1,16 +1,12 @@
-#!/usr/local/bin/python3
 
 class Solution:
-
     def isPalindrome(self, x:int) -> bool:
         if x == 0: return True
         elif x > 0 and x%10 != 0:
             r = 0
             while x > r:
-                d = x%10
-                r = r*10+d
-                x = (x-d)/10
-                print('x: {}, r:{}'.format(x, r))
+                r = r*10+x%10
+                x = (x-x%10)/10
             if x == r or x == (r-r%10)/10: return True
             else: return False
         else: return False
