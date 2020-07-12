@@ -18,28 +18,29 @@ class Solution:
                 list_alpha.append(log)
 
         # Sort alpha
-        sub_groups = {}
+        groups = {}
         for log in list_alpha:
             id_, words = log.split(' ', 1)
-            if str(words) not in sub_groups.keys():
-                sub_groups[str(words)] = [log]
+            if str(words) not in groups.keys():
+                groups[str(words)] = [log]
             else:
-                sub_groups[str(words)].append(log)
+                groups[str(words)].append(log)
 
-        keys = sorted([i for i in sub_groups.keys()])
+        keys = sorted([i for i in groups.keys()])
         list_alpha = []
         for key in keys:
-            if len(sub_groups[key]) > 1:
-                sub_groups[key].sort(reverse=True)
-                list_alpha += sub_groups[key]
+            if len(groups[key]) > 1:
+                groups[key].sort(reverse=True)
+                list_alpha += groups[key]
             else:
-                list_alpha += sub_groups[key]
+                list_alpha += groups[key]
 
         return list_alpha + list_numeric
 
 
 if __name__ == '__main__':
     s = ["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"]
+    s = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"]
     solution = Solution()
     answer = solution.reorderLogFiles(s)
     print(answer)
