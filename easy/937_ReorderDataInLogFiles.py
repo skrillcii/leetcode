@@ -2,26 +2,29 @@
 class Solution:
     def reorderLogFiles(self, s: list) -> list:
 
+        import ipdb
+        ipdb.set_trace()
+
         list_alpha = []
         list_numeric = []
         numeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-        for idx, log in enumerate(s):
+        # Split alpha & numeric
+        for log in s:
             id_, words = log.split(' ', 1)
             if words[0] in numeric:
-                list_numeric.append((id_, words))
+                list_numeric.append(log)
             else:
-                list_alpha.append((id_, words))
+                list_alpha.append(log)
 
-        list_numeric.sort(key=lambda x: x[1], reverse=True)
-        list_alpha.sort(key=lambda x: x[1])
-
+        # Sort alpha
         sub_groups = {}
-        for id_, words in list_alpha:
+        for log in list_alpha:
+            id_, words = log.split(' ', 1)
             if str(words[0]) not in sub_groups.keys():
-                sub_groups[str(words[0])] = [(id_, words)]
+                sub_groups[str(words[0])] = [log]
             else:
-                sub_groups[str(words[0])].append((id_, words))
+                sub_groups[str(words[0])].append(log)
 
         keys = sorted([i for i in sub_groups.keys()])
         list_alpha = []
@@ -29,20 +32,7 @@ class Solution:
             sub_groups[key].sort(key=lambda x: x[0])
             list_alpha += sub_groups[key]
 
-        sub_groups = {}
-        for id_, words in list_numeric:
-            if str(words[0]) not in sub_groups.keys():
-                sub_groups[str(words[0])] = [(id_, words)]
-            else:
-                sub_groups[str(words[0])].append((id_, words))
-
-        keys = sorted([i for i in sub_groups.keys()])
-        list_numeric = []
-        for key in keys:
-            sub_groups[key].sort(key=lambda x: x[0])
-            list_numeric += sub_groups[key]
-
-        return list_numeric + list_numeric
+        return list_alpha + list_numeric
 
 
 if __name__ == '__main__':
