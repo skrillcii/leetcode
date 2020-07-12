@@ -21,16 +21,19 @@ class Solution:
         sub_groups = {}
         for log in list_alpha:
             id_, words = log.split(' ', 1)
-            if str(words[0]) not in sub_groups.keys():
-                sub_groups[str(words[0])] = [log]
+            if str(words) not in sub_groups.keys():
+                sub_groups[str(words)] = [log]
             else:
-                sub_groups[str(words[0])].append(log)
+                sub_groups[str(words)].append(log)
 
         keys = sorted([i for i in sub_groups.keys()])
         list_alpha = []
         for key in keys:
-            sub_groups[key].sort(key=lambda x: x[0])
-            list_alpha += sub_groups[key]
+            if len(sub_groups[key]) > 1:
+                sub_groups[key].sort(reverse=True)
+                list_alpha += sub_groups[key]
+            else:
+                list_alpha += sub_groups[key]
 
         return list_alpha + list_numeric
 
