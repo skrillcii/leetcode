@@ -11,7 +11,7 @@ class Solution:
                         'M': 1000
                         }
 
-    def romanToInteger(self, s: str) -> int:
+    def romanToInt(self, s: str) -> int:
 
         int_ = 0
         if set(s) == 'I':
@@ -34,5 +34,5 @@ class Solution:
 if __name__ == '__main__':
     s = 'MCMXCIV'
     solution = Solution()
-    answer = solution.romanToInteger(s)
+    answer = solution.romanToInt(s)
     print(answer)
