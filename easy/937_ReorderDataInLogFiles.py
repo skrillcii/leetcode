@@ -30,7 +30,7 @@ class Solution:
         list_alpha = []
         for key in keys:
             if len(groups[key]) > 1:
-                groups[key].sort(reverse=True)
+                groups[key].sort(key=lambda x: x.split(' ')[0])
                 list_alpha += groups[key]
             else:
                 list_alpha += groups[key]
@@ -41,6 +41,7 @@ class Solution:
 if __name__ == '__main__':
     s = ["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"]
     s = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"]
+    s = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo", "a2 act car"]
     solution = Solution()
     answer = solution.reorderLogFiles(s)
     print(answer)
