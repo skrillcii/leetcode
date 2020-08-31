@@ -1,6 +1,6 @@
 
 class Solution:
-    # def isAlienSorted(self, words: list(), order: str) -> bool:
+    def isAlienSorted(self, words: list(), order: str) -> bool:
 
         for i in range(len(words) - 1):
             word_head = words[i]
@@ -22,6 +22,7 @@ class Solution:
     #     import ipdb
     #     ipdb.set_trace()
     #     return all(w1 <= w2 for w1, w2 in zip(words, words[1:]))
+
 
 if __name__ == '__main__':
 
