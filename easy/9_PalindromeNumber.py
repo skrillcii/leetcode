@@ -21,4 +21,3 @@ if __name__ == '__main__':
     solution = Solution()
     answer = solution.isPalindrome(x)
     print(answer)
-
