@@ -1,7 +1,10 @@
-# Byte-compiled
-__pycache__/
+# Macos meta files
+*.DS_Store
 
-# Vim swap files
+# Development meta files
 *swo
 *swp
+*tags
 
+# Byte-compiled
+__pycache__/
