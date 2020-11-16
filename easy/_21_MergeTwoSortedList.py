@@ -1,40 +1,55 @@
 
 class ListNode():
-    def __init__(self, val=None):
+    def __init__(self, val=None, next_=None):
         self.val  = val
-        self.next = None
+        self.next = next_
 
 
 class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def mergeTwoLists_recursive(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1 is None:
             return l2
         elif l2 is None:
             return l1
         elif l1.val < l2.val:
-            l1.next = self.mergeTwoLists(l1.next, l2)
+            l1.next = self.mergeTwoLists_recursive(l1.next, l2)
             return l1
         else:
-            l2.next = self.mergeTwoLists(l1, l2.next)
+            l2.next = self.mergeTwoLists_recursive(l1, l2.next)
             return l2
+
+    def mergeTwoLists_iterative(self, l1: ListNode, l2: ListNode) -> ListNode:
+        dummy = cur = ListNode()
+        while l1.val != None and l2.val != None:
+            if l1.val < l2.val:
+                cur.next = l1
+                l1 = l1.next
+            else:
+                cur.next = l2
+                l2 = l2.next
+            cur = cur.next
+        cur.next = l1 or l2
+        return dummy.next
 
 
 if __name__ == '__main__':
 
-    # import ipdb
-    # ipdb.set_trace()
+    import ipdb
+    ipdb.set_trace()
 
     a = [1, 2, 4]
     b = [1, 3, 4]
 
-    l1 = ListNode(1)
-    l1.next = ListNode(2)
-    l1.next.next = ListNode(4)
+    # ListNode does not work as expected somehow
+    l1 = ListNode(val=1)
+    l1.next = ListNode(val=2)
+    l1.next.next = ListNode(val=4)
 
-    l2 = ListNode(1)
-    l2.next = ListNode(3)
-    l2.next.next = ListNode(4)
+    l2 = ListNode(val=1)
+    l2.next = ListNode(val=3)
+    l2.next.next = ListNode(val=4)
 
     solution = Solution()
-    answer = solution.mergeTwoLists(l1, l2)
+    answer = solution.mergeTwoLists_recursive(l1, l2)
+    answer = solution.mergeTwoLists_iterative(l1, l2)
     print(answer)
