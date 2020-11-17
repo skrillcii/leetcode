@@ -1,5 +1,5 @@
-
 class Solution:
+
     def numIslands(self, grid:list):
         """
         :type grid: List[List[str]]
@@ -8,13 +8,16 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     nums = [[1, 1, 1, 1, 0],
             [1, 1, 0, 1, 0],
             [1, 1, 0, 0, 0],
             [0, 0, 0, 0, 0],
             ]
-    print(nums)
+
     solution = Solution()
     answer = solution.numIslands(nums)
     print(answer)
-
