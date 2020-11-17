@@ -17,11 +17,15 @@ def solution(A):
 
 if __name__ == '__main__':
 
+    import ipdb
+    ipdb.set_trace()
+
     # Array length = [0, 100000]
     # Element range = [0, 10000]
 
     A = [1, 0, 2, 0, 0, 2]
     A = [10, 10, 10]
     A = [10000, 10000, 10000]
+
     answer = solution(A)
     print(answer)
