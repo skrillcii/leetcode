@@ -1,4 +1,5 @@
 class Solution:
+
     def fourSum(self, nums: list, target: int) -> list:
 
         if nums == []:

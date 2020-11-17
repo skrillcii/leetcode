@@ -1,4 +1,5 @@
 class Solution:
+
     def longestCommonPrefix(self, strs: list) -> str:
 
         if not strs:
@@ -18,6 +19,7 @@ if __name__ == '__main__':
     ipdb.set_trace()
 
     strs = ['flower', 'flow', 'flight']
+
     solution = Solution()
     answer = solution.longestCommonPrefix(strs)
     print(answer)

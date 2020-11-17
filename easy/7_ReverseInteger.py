@@ -1,5 +1,5 @@
-
 class Solution:
+
     def reverse(self, x: int) -> int:
         '''
         :type x: int
@@ -23,7 +23,12 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     x = -123
+
     solution = Solution()
     answer = solution.reverse(x)
     print(answer)

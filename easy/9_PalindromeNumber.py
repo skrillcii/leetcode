@@ -1,5 +1,5 @@
-
 class Solution:
+
     def isPalindrome(self, x: int) -> bool:
         if x == 0:
             return True
@@ -17,7 +17,12 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     x = 31213
+
     solution = Solution()
     answer = solution.isPalindrome(x)
     print(answer)

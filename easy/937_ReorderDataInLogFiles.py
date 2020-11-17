@@ -1,9 +1,6 @@
-
 class Solution:
-    def reorderLogFiles(self, s: list) -> list:
 
-        import ipdb
-        ipdb.set_trace()
+    def reorderLogFiles(self, s: list) -> list:
 
         list_alpha = []
         list_numeric = []
@@ -39,6 +36,10 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     s = ["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"]
     s = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo"]
     s = ["a1 9 2 3 1", "g1 act car", "zo4 4 7", "ab1 off key dog", "a8 act zoo", "a2 act car"]

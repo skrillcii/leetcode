@@ -1,5 +1,5 @@
-
 class Solution:
+
     def isAlienSorted(self, words: list(), order: str) -> bool:
 
         for i in range(len(words) - 1):
@@ -25,6 +25,9 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
 
     # words = ["hello", "leetcode"]
     # order = "hlabcdefgijkmnopqrstuvwxyz"

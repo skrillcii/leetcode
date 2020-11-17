@@ -1,4 +1,3 @@
-
 class Solution:
 
     def __init__(self):
@@ -32,7 +31,12 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     s = 'MCMXCIV'
+
     solution = Solution()
     answer = solution.romanToInt(s)
     print(answer)

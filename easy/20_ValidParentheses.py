@@ -1,5 +1,5 @@
-
 class Solution:
+
     def validParentheses(self, s: str) -> bool:
 
         if len(s) % 2 != 0:
@@ -14,7 +14,12 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     s = '([])'
+
     solution = Solution()
     answer = solution.validParentheses(s)
     print(answer)

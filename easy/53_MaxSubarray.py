@@ -1,5 +1,5 @@
-
 class Solution:
+
     def maxSubArray(self, nums: list) -> int:
 
         import ipdb
@@ -22,7 +22,12 @@ class Solution:
 
 
 if __name__ == '__main__':
+
+    import ipdb
+    ipdb.set_trace()
+
     x = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
     solution = Solution()
     answer = solution.maxSubArray(x)
     print(answer)

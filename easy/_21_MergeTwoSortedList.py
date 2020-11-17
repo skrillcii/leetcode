@@ -1,11 +1,12 @@
-
 class ListNode():
+
     def __init__(self, val=None, next_=None):
         self.val  = val
         self.next = next_
 
 
 class Solution:
+
     def mergeTwoLists_recursive(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1 is None:
             return l2
