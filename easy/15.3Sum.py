@@ -24,15 +24,16 @@ class Solution:
         p2 = len(nums) - 1
 
         while p1 < p2:
-            if nums[p1] + nums[p2] + target == 0:
+            sum_ = nums[p1] + nums[p2] + target
+            if sum_ == 0:
                 solutions.append([target, nums[p1], nums[p2]])
                 p1 += 1
                 p2 -= 1
                 while p1 < p2 and nums[p1] == nums[p1 - 1]:
                     p1 += 1
-            elif nums[p1] + nums[p2] + target < 0:
+            elif sum_ < 0:
                 p1 += 1
-            elif nums[p1] + nums[p2] + target > 0:
+            elif sum_ > 0:
                 p2 -= 1
 
 
