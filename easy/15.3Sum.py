@@ -26,6 +26,8 @@ class Solution:
                 solutions.append([target, nums[p1], nums[p2]])
                 p1 += 1
                 p2 -= 1
+                while p1 < p2 and nums[p1] == nums[p2 - 1]:
+                    p1 += 1
 
             elif nums[p1] + nums[p2] + target < 0:
                 p1 += 1
@@ -40,7 +42,8 @@ if __name__ == '__main__':
 
     # nums = [-1, 0, 1, 2, -1, -4]
     # nums = [0, 0]
-    nums = [0, 0, 0]
+    # nums = [0, 0, 0]
+    nums = [-2, 0, 0, 2, 2]
 
     solution = Solution()
     answer = solution.threeSum(nums)
