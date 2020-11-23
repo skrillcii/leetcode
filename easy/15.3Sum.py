@@ -6,13 +6,15 @@ class Solution:
             return []
 
         else:
-            nums = sorted(nums)
+            nums.sort()
             solutions = []
             for idx, target in enumerate(nums):
                 if target > 0:
                     break
-                elif idx == 0 or nums[idx] != nums[idx - 1]:
+                elif nums[idx] != nums[idx - 1]:
                     self.twoSum(nums, idx, target, solutions)
+
+        return solutions
 
     def twoSum(self, nums, idx, target, solutions):
 
@@ -31,16 +33,13 @@ class Solution:
             elif nums[p1] + nums[p2] + target > 0:
                 p2 -= 1
 
-        return solutions
-
-
 if __name__ == '__main__':
 
     import ipdb
     ipdb.set_trace()
 
-    nums = [-1, 0, 1, 2, -1, -4]
-    nums = [0, 0]
+    # nums = [-1, 0, 1, 2, -1, -4]
+    # nums = [0, 0]
     nums = [0, 0, 0]
 
     solution = Solution()
