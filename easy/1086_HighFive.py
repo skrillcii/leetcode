@@ -1,6 +1,6 @@
 class Solution:
 
-    def highFive(self, items: list) -> list:
+    def highFive_self_trial(self, items: list) -> list:
         '''
         Time Complexity = (N)
         Space Complexity = (N)
@@ -20,8 +20,36 @@ class Solution:
             dict_[id_].sort()
             average = int(sum(dict_[id_][-5:]) / 5)
             list_.append([id_, average])
-
         return list_
+
+    def highFive_sort(self, items: list) -> list:
+        '''
+        Time Complexity = (N)
+        Space Complexity = (N)
+        '''
+        items.sort(reverse=True)
+        id_ = items[0][0]
+        curr = []
+        list_ = []
+
+        for i, score in items:
+            if i == id_ and len(curr) < 5:
+                curr.append(score)
+            else:
+                list_.insert(0, [id_, sum(curr) // 5])
+                id_ = i
+                curr = [score]
+        return list_
+
+
+        return None
+
+    def highFive_priority_queue(self, items: list) -> list:
+        '''
+        Time Complexity = (N)
+        Space Complexity = (N)
+        '''
+        return None
 
 
 if __name__ == '__main__':
@@ -33,5 +61,9 @@ if __name__ == '__main__':
              [2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]
 
     solution = Solution()
-    answer = solution.highFive(items)
+    answer = solution.highFive_self_trial(items)
     print(answer)
+    answer = solution.highFive_sort(items)
+    print(answer)
+    # answer = solution.highFive_priority_queue(items)
+    # print(answer)
