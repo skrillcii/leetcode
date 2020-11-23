@@ -1,3 +1,7 @@
+import collections
+import heapq
+
+
 class Solution:
 
     def highFive_self_trial(self, items: list) -> list:
@@ -43,20 +47,28 @@ class Solution:
         list_.insert(0, [id_, sum(curr) // 5])
         return list_
 
-        return None
-
     def highFive_priority_queue(self, items: list) -> list:
         '''
         Time Complexity = (N)
         Space Complexity = (N)
         '''
-        return None
+        students = collections.defaultdict(list)
+        results = []
+
+        for student, score in items:
+            heapq.heappush(students[student], -score)
+
+        for student in students:
+            avg_scores = sum(-heapq.heappop(students[student])
+                             for i in range(0, 5)) // 5
+            results.insert(0, [student, avg_scores])
+        return results
 
 
 if __name__ == '__main__':
 
-    import ipdb
-    ipdb.set_trace()
+    # import ipdb
+    # ipdb.set_trace()
 
     items = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60],
              [2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]
@@ -68,5 +80,5 @@ if __name__ == '__main__':
     print(answer)
     answer = solution.highFive_sort(items)
     print(answer)
-    # answer = solution.highFive_priority_queue(items)
-    # print(answer)
+    answer = solution.highFive_priority_queue(items)
+    print(answer)
