@@ -26,12 +26,10 @@ class Solution:
                 solutions.append([target, nums[p1], nums[p2]])
                 p1 += 1
                 p2 -= 1
-                while p1 < p2 and nums[p1] == nums[p2 - 1]:
+                while p1 < p2 and nums[p1] == nums[p1 - 1]:
                     p1 += 1
-
             elif nums[p1] + nums[p2] + target < 0:
                 p1 += 1
-
             elif nums[p1] + nums[p2] + target > 0:
                 p2 -= 1
 
