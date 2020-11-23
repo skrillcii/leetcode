@@ -22,15 +22,16 @@ class Solution:
             i = -nums[0] + 1
         else:
             i = 1
-        sum_ = i
 
         while True:
+            sum_ = i
             for j in range(len(nums)):
                 sum_ = sum_ + nums[j]
                 if sum_ < 1:
                     i += -sum_ + 1
-                    continue
-            return i
+                    break
+            if sum_ >= 1:
+                return i
 
 
 if __name__ == '__main__':
@@ -39,6 +40,7 @@ if __name__ == '__main__':
     ipdb.set_trace()
 
     nums = [-3, 2, -3, 4, 2]
+    nums = [1, -2, -3]
 
     solution = Solution()
     answer = solution.minStartValue_1st_trail(nums)
