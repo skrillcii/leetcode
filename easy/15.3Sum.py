@@ -16,7 +16,7 @@ class Solution:
             p1 = idx + 1
             p2 = -1
 
-            while  nums[p1] < nums[p2]:
+            while nums[p1] < nums[p2]:
                 if target == nums[idx - 1]:
                     break
 
