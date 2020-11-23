@@ -1,6 +1,10 @@
 class Solution:
 
     def minStartValue_1st_trail(self, nums: list) -> int:
+        '''
+        Time Complexity: O(N) or O(NlogN)
+        Space Complexity: O(1)
+        '''
         i = 1
         while True:
             sum_ = self.loopSum(i, nums)
@@ -18,6 +22,10 @@ class Solution:
             return sum_
 
     def minStartValue_2nd_trail(self, nums: list) -> int:
+        '''
+        Time Complexity: O(N) or O(NlogN)
+        Space Complexity: O(1)
+        '''
         if nums[0] < 0:
             i = -nums[0] + 1
         else:
@@ -34,6 +42,10 @@ class Solution:
                 return i
 
     def minStartValue_prefix_sum(self, nums: list) -> int:
+        '''
+        Time Complexity: O(N)
+        Space Complexity: O(1)
+        '''
         prefix_sum = [nums[0]]
         for i in range(1, len(nums)):
             prefix_sum.append(prefix_sum[i - 1] + nums[i])
@@ -42,7 +54,7 @@ class Solution:
         if min_ <= 0:
             return -min(prefix_sum) + 1
         else:
-            return min(prefix_sum)
+            return 1
 
 
 if __name__ == '__main__':
@@ -53,6 +65,7 @@ if __name__ == '__main__':
     nums = [-3, 2, -3, 4, 2]
     nums = [1, -2, -3]
     nums = [1, 2]
+    nums = [2, 3, 4, -5, -1]
 
     solution = Solution()
     answer = solution.minStartValue_1st_trail(nums)
