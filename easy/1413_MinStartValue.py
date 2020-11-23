@@ -37,7 +37,12 @@ class Solution:
         prefix_sum = [nums[0]]
         for i in range(1, len(nums)):
             prefix_sum.append(prefix_sum[i - 1] + nums[i])
-        return -min(prefix_sum) + 1
+
+        min_ = min(prefix_sum)
+        if min_ <= 0:
+            return -min(prefix_sum) + 1
+        else:
+            return min(prefix_sum)
 
 
 if __name__ == '__main__':
@@ -47,6 +52,7 @@ if __name__ == '__main__':
 
     nums = [-3, 2, -3, 4, 2]
     nums = [1, -2, -3]
+    nums = [1, 2]
 
     solution = Solution()
     answer = solution.minStartValue_1st_trail(nums)
