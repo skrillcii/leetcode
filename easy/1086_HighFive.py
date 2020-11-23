@@ -33,14 +33,15 @@ class Solution:
         list_ = []
 
         for i, score in items:
-            if i == id_ and len(curr) < 5:
-                curr.append(score)
+            if i == id_:
+                if len(curr) < 5:
+                    curr.append(score)
             else:
                 list_.insert(0, [id_, sum(curr) // 5])
                 id_ = i
                 curr = [score]
+        list_.insert(0, [id_, sum(curr) // 5])
         return list_
-
 
         return None
 
@@ -59,6 +60,8 @@ if __name__ == '__main__':
 
     items = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60],
              [2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]
+    items = [[1, 100], [7, 100], [1, 100], [7, 100], [1, 100],
+             [7, 100], [1, 100], [7, 100], [1, 100], [7, 100]]
 
     solution = Solution()
     answer = solution.highFive_self_trial(items)
