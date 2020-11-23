@@ -1,7 +1,3 @@
-import collections
-import heapq
-
-
 class Solution:
 
     def minStartValue_1st_trail(self, nums: list) -> int:
