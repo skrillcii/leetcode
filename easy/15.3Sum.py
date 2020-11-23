@@ -2,17 +2,19 @@ class Solution:
 
     def threeSum(self, nums: list) -> list:
 
-        if nums == [] or nums == [0] or len(nums) <= 2:
-            return []
+        # Do not need this explicit check, it will only go into loops
+        # if condition satisfy
+        # if nums == [] or nums == [0] or len(nums) <= 2:
+        #     return []
+        # else:
 
-        else:
-            nums.sort()
-            solutions = []
-            for idx, target in enumerate(nums):
-                if target > 0:
-                    break
-                elif idx == 0 or nums[idx] != nums[idx - 1]:
-                    self.twoSum(nums, idx, target, solutions)
+        nums.sort()
+        solutions = []
+        for idx, target in enumerate(nums):
+            if target > 0:
+                break
+            elif idx == 0 or nums[idx] != nums[idx - 1]:
+                self.twoSum(nums, idx, target, solutions)
 
         return solutions
 
@@ -42,7 +44,7 @@ if __name__ == '__main__':
     # nums = [-1, 0, 1, 2, -1, -4]
     # nums = [0, 0]
     # nums = [0, 0, 0]
-    nums = [-2, 0, 0, 2, 2]
+    # nums = [-2, 0, 0, 2, 2]
 
     solution = Solution()
     answer = solution.threeSum(nums)
