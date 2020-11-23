@@ -2,18 +2,21 @@ class Solution:
 
     def highFive(self, items: list) -> list:
         '''
-        Time Complexity = (N) or (N/2)
+        Time Complexity = (N)
         Space Complexity = (N)
         '''
         dict_ = dict()
+        keys_ = []
         for id_, score in items:
             if id_ not in dict_.keys():
                 dict_[id_] = [score]
+                keys_.append(id_)
             else:
                 dict_[id_].append(score)
 
+        keys_.sort()
         list_ = []
-        for id_ in dict_.keys():
+        for id_ in keys_:
             dict_[id_].sort()
             average = int(sum(dict_[id_][-5:]) / 5)
             list_.append([id_, average])
