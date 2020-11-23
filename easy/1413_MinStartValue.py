@@ -33,6 +33,12 @@ class Solution:
             if sum_ >= 1:
                 return i
 
+    def minStartValue_prefix_sum(self, nums: list) -> int:
+        prefix_sum = [nums[0]]
+        for i in range(1, len(nums)):
+            prefix_sum.append(prefix_sum[i - 1] + nums[i])
+        return -min(prefix_sum) + 1
+
 
 if __name__ == '__main__':
 
@@ -46,4 +52,6 @@ if __name__ == '__main__':
     answer = solution.minStartValue_1st_trail(nums)
     print(answer)
     answer = solution.minStartValue_2nd_trail(nums)
+    print(answer)
+    answer = solution.minStartValue_prefix_sum(nums)
     print(answer)
