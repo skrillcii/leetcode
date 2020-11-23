@@ -2,7 +2,7 @@ class Solution:
 
     def shuffleTheArray(self, nums: list, n: int) -> list:
         '''
-        Time Complexity = (N)
+        Time Complexity = (N) or (N/2)
         Space Complexity = (N)
         '''
         list_ = []
