@@ -9,7 +9,7 @@ class Solution:
         p1 = -1
         p2 = -1
 
-        while nums1[p1] == 0:
+        while m > 1 and nums1[p1] == 0:
             p1 -= 1
 
         while p2 >= -n:
@@ -36,9 +36,24 @@ if __name__ == '__main__':
 
     nums1 = [1, 2, 3, 0, 0, 0]
     nums2 = [2, 5, 6]
+    solution = Solution()
+    answer = solution.merge(nums1, len(nums1), nums2, len(nums2))
+    print(answer)
 
     nums1 = [1, 2, 3, 0, 0, 0]
     nums2 = [2, 3, 6]
+    solution = Solution()
+    answer = solution.merge(nums1, len(nums1), nums2, len(nums2))
+    print(answer)
+
+    nums1 = [0]
+    nums2 = [1]
+    solution = Solution()
+    answer = solution.merge(nums1, len(nums1), nums2, len(nums2))
+    print(answer)
+
+    nums1 = [2, 0]
+    nums2 = [1]
     solution = Solution()
     answer = solution.merge(nums1, len(nums1), nums2, len(nums2))
     print(answer)
