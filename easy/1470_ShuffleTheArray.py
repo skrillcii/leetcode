@@ -14,8 +14,8 @@ class Solution:
 
 if __name__ == '__main__':
 
-    # import ipdb
-    # ipdb.set_trace()
+    import ipdb
+    ipdb.set_trace()
 
     nums = [2, 5, 1, 3, 4, 7]
     nums = [1, 2, 3, 4, 4, 3, 2, 1]

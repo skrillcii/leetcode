@@ -42,10 +42,10 @@ if __name__ == '__main__':
     import ipdb
     ipdb.set_trace()
 
-    # nums = [-1, 0, 1, 2, -1, -4]
-    # nums = [0, 0]
-    # nums = [0, 0, 0]
-    # nums = [-2, 0, 0, 2, 2]
+    nums = [-1, 0, 1, 2, -1, -4]
+    nums = [0, 0]
+    nums = [0, 0, 0]
+    nums = [-2, 0, 0, 2, 2]
 
     solution = Solution()
     answer = solution.threeSum(nums)

@@ -67,8 +67,8 @@ class Solution:
 
 if __name__ == '__main__':
 
-    # import ipdb
-    # ipdb.set_trace()
+    import ipdb
+    ipdb.set_trace()
 
     items = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60],
              [2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]

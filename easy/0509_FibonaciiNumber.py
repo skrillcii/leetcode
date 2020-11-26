@@ -60,8 +60,8 @@ class Solution:
 
 if __name__ == '__main__':
 
-    # import ipdb
-    # ipdb.set_trace()
+    import ipdb
+    ipdb.set_trace()
 
     N = 2
     N = 30
