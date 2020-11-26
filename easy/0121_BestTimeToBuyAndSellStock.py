@@ -1,8 +1,8 @@
 class Solution:
 
-    def maxProfit(self, prices: list) -> int:
+    def maxProfit_1st_trial(self, prices: list) -> int:
         '''
-        Time Complexity: O(N+M)
+        Time Complexity: O(NlogN)
         Space Complexity: O(1)
         '''
         if prices == []:
@@ -12,11 +12,29 @@ class Solution:
         for i, pi in enumerate(prices):
             max_ = 0
             for j, pj in enumerate(prices[i + 1:]):
-                diff = pj - pi
-                if diff > max_:
-                    max_ = diff
+                if j > i:
+                    diff = pj - pi
+                    if diff > max_:
+                        max_ = diff
             prefix_profit.append(max_)
         return max(prefix_profit)
+
+    def maxProfit_2nd_trial(self, prices: list) -> int:
+        '''
+        Time Complexity: O(N)
+        Space Complexity: O(1)
+        '''
+        if prices == []:
+            return 0
+
+        max_profit = 0
+        min_price = max(prices)
+
+        for price in prices:
+            min_price = min(price, min_price)
+            profit = price - min_price
+            max_profit = max(profit, max_profit)
+        return max_profit
 
 
 if __name__ == '__main__':
@@ -26,10 +44,10 @@ if __name__ == '__main__':
 
     prices = [7, 1, 5, 3, 6, 4]
     solution = Solution()
-    answer = solution.maxProfit(prices)
+    answer = solution.maxProfit_2nd_trial(prices)
     print(answer)
 
     prices = [7, 6, 4, 3, 1]
     solution = Solution()
-    answer = solution.maxProfit(prices)
+    answer = solution.maxProfit_2nd_trial(prices)
     print(answer)
