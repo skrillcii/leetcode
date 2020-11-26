@@ -36,6 +36,16 @@ class Solution:
             max_profit = max(profit, max_profit)
         return max_profit
 
+    def maxProfit_minimal(self, prices: list) -> int:
+        '''
+        Time Complexity: O(N)
+        Space Complexity: O(1)
+        '''
+        buy, ans = float('inf'), 0
+        for p in prices:
+            buy, ans = min(buy, p), max(ans, p-buy)
+        return ans
+
 
 if __name__ == '__main__':
 
