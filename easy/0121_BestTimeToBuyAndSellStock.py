@@ -5,6 +5,9 @@ class Solution:
         Time Complexity: O(N+M)
         Space Complexity: O(1)
         '''
+        if prices == []:
+            return 0
+
         prefix_profit = []
         for i, pi in enumerate(prices):
             max_ = 0
