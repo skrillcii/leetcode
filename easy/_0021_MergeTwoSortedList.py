@@ -1,7 +1,7 @@
 class ListNode():
 
     def __init__(self, val=None, next_=None):
-        self.val  = val
+        self.val = val
         self.next = next_
 
 
@@ -21,7 +21,7 @@ class Solution:
 
     def mergeTwoLists_iterative(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummy = cur = ListNode()
-        while l1.val != None and l2.val != None:
+        while l1.val is not None and l2.val is not None:
             if l1.val < l2.val:
                 cur.next = l1
                 l1 = l1.next
