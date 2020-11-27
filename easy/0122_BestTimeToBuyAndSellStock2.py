@@ -1,6 +1,6 @@
 class Solution:
 
-    def maxProfit2(self, prices: list) -> int:
+    def maxProfit_peak_valley(self, prices: list) -> int:
         '''
         Time Complexity: O(N)
         Space Complexity: O(1)
@@ -9,7 +9,7 @@ class Solution:
         total_profit = 0
 
         if prices == []:
-            return max_profit
+            return total_profit
 
         for price in prices:
             if price < valley:
@@ -17,6 +17,21 @@ class Solution:
             elif price > valley:
                 total_profit += price - valley
                 valley = price
+        return total_profit
+
+    def maxProfit_one_pass(self, prices: list) -> int:
+        '''
+        Time Complexity: O(N)
+        Space Complexity: O(1)
+        '''
+        total_profit = 0
+
+        if prices == []:
+            return total_profit
+
+        for i in range(1, len(prices), 1):
+            if prices[i] > prices[i - 1]:
+                total_profit += prices[i] - prices[i -1]
         return total_profit
 
 
@@ -27,15 +42,15 @@ if __name__ == '__main__':
 
     prices = [7, 1, 5, 3, 6, 4]
     solution = Solution()
-    answer = solution.maxProfit2(prices)
+    answer = solution.maxProfit_one_pass(prices)
     print(answer)
 
     prices = [1, 2, 3, 4, 5]
     solution = Solution()
-    answer = solution.maxProfit2(prices)
+    answer = solution.maxProfit_one_pass(prices)
     print(answer)
 
     prices = [7, 6, 4, 3, 1]
     solution = Solution()
-    answer = solution.maxProfit2(prices)
+    answer = solution.maxProfit_one_pass(prices)
     print(answer)
