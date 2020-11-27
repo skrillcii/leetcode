@@ -23,7 +23,11 @@ if __name__ == '__main__':
     ipdb.set_trace()
 
     nums = [1, 2, 3, 4]
+    solution = Solution()
+    answer = solution.decompressRLElist(nums)
+    print(answer)
 
+    nums = [1, 1, 2, 3]
     solution = Solution()
     answer = solution.decompressRLElist(nums)
     print(answer)
