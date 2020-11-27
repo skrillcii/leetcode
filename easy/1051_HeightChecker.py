@@ -14,7 +14,7 @@ class Solution:
         '''
 
         count = 0
-        dict_ = [0] * 100
+        dict_ = [0] * 101
         sort_ = []
         for i, h in enumerate(heights):
             dict_[h] += 1
