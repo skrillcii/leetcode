@@ -15,7 +15,6 @@ class Solution:
         list_.sort()
         return list_
 
-
     def sortedSquares_two_pointers(self, A: list) -> list:
         '''
         Time Complexity = (N)
@@ -53,7 +52,6 @@ class Solution:
             i += 1
 
         return list_
-
 
 
 if __name__ == '__main__':
