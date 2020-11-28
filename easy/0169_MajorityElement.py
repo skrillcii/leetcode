@@ -24,7 +24,7 @@ class Solution:
         Space Complexity = O(N)
         '''
         major = nums[0]
-        count = 1
+        count = 0
         for num in nums:
             if num == major:
                 count += 1
@@ -51,12 +51,22 @@ if __name__ == '__main__':
     answer = solution.majorityElement_hash_map(nums)
     print(answer)
 
+    nums = [6, 5, 5]
+    solution = Solution()
+    answer = solution.majorityElement_hash_map(nums)
+    print(answer)
+
     nums = [3, 2, 3]
     solution = Solution()
     answer = solution.majorityElement_count_otherwise(nums)
     print(answer)
 
     nums = [2, 2, 1, 1, 1, 2, 2]
+    solution = Solution()
+    answer = solution.majorityElement_count_otherwise(nums)
+    print(answer)
+
+    nums = [6, 5, 5]
     solution = Solution()
     answer = solution.majorityElement_count_otherwise(nums)
     print(answer)
