@@ -13,7 +13,6 @@ class Solution:
         Space Complexity = (N)
         '''
 
-        count = 0
         dict_ = [0] * 101
         sort_ = []
         for i, h in enumerate(heights):
