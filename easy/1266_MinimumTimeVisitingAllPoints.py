@@ -1,9 +1,9 @@
 class Solution:
 
-    def minTimeToVistAllPoints(self, points):
+    def minTimeToVisitAllPoints(self, points):
         '''
         Time Complexity = O(N)
-        Space Complexity = O(N)
+        Space Complexity = O(1)
         '''
         total = 0
         for i in range(len(points) - 1):
@@ -19,12 +19,12 @@ if __name__ == '__main__':
 
     points = [[1, 1], [3, 4], [-1, 0]]
     solution = Solution()
-    answer = solution.minTimeToVistAllPoints(points)
+    answer = solution.minTimeToVisitAllPoints(points)
     print(answer)
     # output 7
 
     points = [[3, 2], [-2, 2]]
     solution = Solution()
-    answer = solution.minTimeToVistAllPoints(points)
+    answer = solution.minTimeToVisitAllPoints(points)
     print(answer)
     # output 5
