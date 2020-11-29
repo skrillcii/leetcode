@@ -18,9 +18,20 @@ class Solution:
         return True
 
     def isToeplitzMatrix_compare_top_left(self, matrix):
+        '''
+        Time Complexity = O(NxM)
+        Space Complexity = O(1)
+        '''
         return all(r == 0 or c == 0 or matrix[r-1][c-1] == val
                    for r, row in enumerate(matrix)
                    for c, val in enumerate(row))
+
+    def isToeplitzMatrix_pythonic(self, matrix):
+        '''
+        Time Complexity = O(NxM)
+        Space Complexity = O(1)
+        '''
+        return all(r1[:-1] == r2[1:] for r1,r2 in zip(matrix, matrix[1:]))
 
 
 if __name__ == '__main__':
@@ -56,4 +67,19 @@ if __name__ == '__main__':
     matrix = [[]]
     solution = Solution()
     answer = solution.isToeplitzMatrix_compare_top_left(matrix)
+    print(answer)
+
+    matrix = [[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]]
+    solution = Solution()
+    answer = solution.isToeplitzMatrix_pythonic(matrix)
+    print(answer)
+
+    matrix = [[1]]
+    solution = Solution()
+    answer = solution.isToeplitzMatrix_pythonic(matrix)
+    print(answer)
+
+    matrix = [[]]
+    solution = Solution()
+    answer = solution.isToeplitzMatrix_pythonic(matrix)
     print(answer)
