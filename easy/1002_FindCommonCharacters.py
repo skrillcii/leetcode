@@ -2,8 +2,8 @@ class Solution:
 
     def commonChars(self, A: list) -> list:
         '''
-        Time Complexity = O(N)
-        Space Complexity = O(N)
+        Time Complexity = O(N or len(ref))
+        Space Complexity = O(len(ref))
         '''
         ref = min(A, key=len)
         A.remove(ref)
