@@ -12,13 +12,10 @@ class Solution:
 
         for idx, char in enumerate(s):
             pointer2 = idx
-            if char not in chars:
-                chars[char] = idx
-            else:
-                chars[char] = idx
-                if pointer2 - pointer1 > max_length:
-                    max_length = pointer2 - pointer1
+            if char in chars:
                 pointer1 = chars[char] + 1
+            max_length = max(max_length, pointer2 - pointer1 + 1)
+            chars[char] = idx
         return max_length
 
 
