@@ -3,7 +3,7 @@ class Solution:
     def lengthOfLongestSubstring_two_pointer_tracking(self, s: str) -> int:
         '''
         Time Complexity = O(N)
-        Space Complexity = O(1)
+        Space Complexity = O(N)
         '''
         pointer1 = 0
         pointer2 = 0
@@ -15,9 +15,10 @@ class Solution:
             if char not in chars:
                 chars[char] = idx
             else:
+                chars[char] = idx
                 if pointer2 - pointer1 > max_length:
                     max_length = pointer2 - pointer1
-                pointer1 = idx
+                pointer1 = chars[char] + 1
         return max_length
 
 
