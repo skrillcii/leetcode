@@ -1,12 +1,10 @@
 class Solution:
 
     def twoSum(self, nums: list, target: list):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-
+        '''
+        Time Complexity = O(N)
+        Space Complexity = O(N)
+        '''
         unique = {}
         for i, num in enumerate(nums):
             diff = target - num
@@ -21,9 +19,20 @@ if __name__ == '__main__':
     import ipdb
     ipdb.set_trace()
 
+    nums = [2, 7, 11, 15]
+    target = 9
+    solution = Solution()
+    answer = solution.twoSum(nums, target)
+    print(answer)
+
+    nums = [3, 2, 4]
+    target = 6
+    solution = Solution()
+    answer = solution.twoSum(nums, target)
+    print(answer)
+
     nums = [3, 3]
     target = 6
-
     solution = Solution()
     answer = solution.twoSum(nums, target)
     print(answer)
