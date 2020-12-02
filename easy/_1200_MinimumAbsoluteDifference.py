@@ -7,14 +7,14 @@ class Solution:
         '''
         min_ = None
         for i in range(len(arr) - 1):
-            for j in range(i + 1 , len(arr)):
+            for j in range(i + 1, len(arr)):
                 diff = abs(arr[i] - arr[j])
-                if min_== None or diff < min_:
+                if min_ is None or diff < min_:
                     min_ = diff
 
         list_ = []
         for i in range(len(arr) - 1):
-            for j in range(i + 1 , len(arr)):
+            for j in range(i + 1, len(arr)):
                 diff = abs(arr[i] - arr[j])
                 if diff == min_:
                     list_.append(sorted([arr[i], arr[j]]))
