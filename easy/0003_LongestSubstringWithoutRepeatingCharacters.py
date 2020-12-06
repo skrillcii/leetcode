@@ -12,7 +12,7 @@ class Solution:
 
         for idx, char in enumerate(s):
             pointer2 = idx
-            if char in chars:
+            if char in chars and pointer1 <= chars[char]:
                 pointer1 = chars[char] + 1
             max_length = max(max_length, pointer2 - pointer1 + 1)
             chars[char] = idx
@@ -40,6 +40,11 @@ if __name__ == '__main__':
     print(answer)
 
     s = ''
+    solution = Solution()
+    answer = solution.lengthOfLongestSubstring_two_pointer_tracking(s)
+    print(answer)
+
+    s = 'abba'
     solution = Solution()
     answer = solution.lengthOfLongestSubstring_two_pointer_tracking(s)
     print(answer)
