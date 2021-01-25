@@ -1,6 +1,6 @@
 class Solution:
 
-    def longestpalindrome(self, s: str) -> str:
+    def longestPalindrome(self, s: str) -> str:
         '''
         Time Complexity = O(N)
         Space Complexity = O(N)
@@ -10,11 +10,12 @@ class Solution:
         dict_ = {}
         for idx, char in enumerate(s):
             if char not in dict_.keys():
-                dict_[char] = idx
+                dict_[char] = [idx]
             else:
-                sub_string = s[dict_[char]:idx + 1]
+                sub_string = s[dict_[char][0]:idx + 1]
                 if len(sub_string) > len(max_string):
                     max_string = sub_string
+                dict_[char].append(idx)
         return max_string
 
 
@@ -25,20 +26,30 @@ if __name__ == '__main__':
 
     s = 'babad'
     solution = Solution()
-    answer = solution.longestpalindrome(s)
+    answer = solution.longestPalindrome(s)
     print(answer)
 
     s = 'cbbd'
     solution = Solution()
-    answer = solution.longestpalindrome(s)
+    answer = solution.longestPalindrome(s)
     print(answer)
 
     s = 'a'
     solution = Solution()
-    answer = solution.longestpalindrome(s)
+    answer = solution.longestPalindrome(s)
     print(answer)
 
     s = 'ac'
     solution = Solution()
-    answer = solution.longestpalindrome(s)
+    answer = solution.longestPalindrome(s)
+    print(answer)
+
+    s = 'aacabdkacaa'
+    solution = Solution()
+    answer = solution.longestPalindrome(s)
+    print(answer)
+
+    s = 'ccc'
+    solution = Solution()
+    answer = solution.longestPalindrome(s)
     print(answer)
