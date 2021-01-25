@@ -2,8 +2,8 @@ class Solution:
 
     def longestPalindrome(self, s: str) -> str:
         '''
-        Time Complexity = O(N)
-        Space Complexity = O(N)
+        Time Complexity = O(N^2)
+        Space Complexity = O(1)
         '''
 
         max_string = s[0]
