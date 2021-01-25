@@ -7,16 +7,23 @@ class Solution:
         '''
 
         max_string = s[0]
-        dict_ = {}
-        for idx, char in enumerate(s):
-            if char not in dict_.keys():
-                dict_[char] = [idx]
-            else:
-                sub_string = s[dict_[char][0]:idx + 1]
-                if len(sub_string) > len(max_string):
-                    max_string = sub_string
-                dict_[char].append(idx)
+        for idx in range(len(s)):
+            # For odd length
+            sub_string = self.subPalindrome(s, idx, idx)
+            if len(sub_string) > len(max_string):
+                max_string = sub_string
+            # For even length
+            sub_string = self.subPalindrome(s, idx, idx + 1)
+            if len(sub_string) > len(max_string):
+                max_string = sub_string
         return max_string
+
+    def subPalindrome(self, s: str, j: int, k: int) -> str:
+        while j >= 0 and k < len(s) and s[j] == s[k]:
+            j -= 1
+            k += 1
+        sub_string = s[j + 1:k]
+        return sub_string
 
 
 if __name__ == '__main__':
