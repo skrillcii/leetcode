@@ -19,6 +19,10 @@ class LinkedList:
 
 class Solution:
     def deleteNodes(self, head: ListNode, m: int, n: int) -> ListNode:
+        '''
+        Time Complexity = O(N)
+        Space Complexity = O(1)
+        '''
         counter = 0
         slow = fast = head
         while fast is not None:
