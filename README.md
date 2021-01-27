@@ -11,3 +11,10 @@
 1. Union Find
 1. Binary Search Tree
 1. Hash Table
+
+### Revision Questions
+Easy:
+* 0021_MergeTwoSortedList.py
+
+Medium:
+* 0019_RemoveNthNodeFromEndofList.py

@@ -1,10 +1,12 @@
 class ListNode:
+
     def __init__(self, val=0, next_=None):
         self.val = val
         self.next = next_
 
 
 class LinkedList:
+
     def __init__(self, list_: list) -> ListNode:
         self.head = ListNode(list_[0])
         tail = self.head
@@ -16,6 +18,7 @@ class LinkedList:
 
 
 class Solution:
+
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         '''
         Time Complexity = O(N)
