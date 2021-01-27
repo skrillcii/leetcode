@@ -50,3 +50,24 @@ if __name__ == '__main__':
     solution = Solution()
     answer = solution.deleteNodes(head, m, n)
     print(answer)
+
+    list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    head = LinkedList(list_).head
+    m, n = 1, 3
+    solution = Solution()
+    answer = solution.deleteNodes(head, m, n)
+    print(answer)
+
+    list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    head = LinkedList(list_).head
+    m, n = 3, 1
+    solution = Solution()
+    answer = solution.deleteNodes(head, m, n)
+    print(answer)
+
+    list_ = [9, 3, 7, 7, 9, 10, 8, 2]
+    head = LinkedList(list_).head
+    m, n = 1, 2
+    solution = Solution()
+    answer = solution.deleteNodes(head, m, n)
+    print(answer)
