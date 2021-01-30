@@ -7,7 +7,7 @@ class ListNode:
 
 class LinkedList:
 
-    def __init__(self, list_: list) -> ListNode:
+    def __init__(self, list_: list):
         self.head = ListNode(list_[0])
         tail = self.head
         i = 1
