@@ -5,6 +5,18 @@ class ListNode():
         self.next = next_
 
 
+class LinkedList():
+
+    def __init__(self, list_: list):
+        self.head = ListNode(val=list_[0])
+        tail = self.head
+        i = 1
+        while i < len(list_):
+            tail.next = ListNode(val=list_[i])
+            tail = tail.next
+            i += 1
+
+
 class Solution:
 
     def mergeTwoLists_recursive(self, l1: ListNode, l2: ListNode) -> ListNode:
