@@ -50,16 +50,10 @@ if __name__ == '__main__':
     import ipdb
     ipdb.set_trace()
 
-    list_ = [1, 2, 4]
-    l1 = LinkedList(list_)
+    list_1 = [1, 2, 4]
+    list_2 = [1, 3, 4]
+    l1 = LinkedList(list_1)
+    l2 = LinkedList(list_2)
     solution = Solution()
     answer = solution.mergeTwoLists_recursive(l1, l2)
-    answer = solution.mergeTwoLists_iterative(l1, l2)
-    print(answer)
-
-    list_ = [1, 3, 4]
-    l2 = LinkedList(list_)
-    solution = Solution()
-    answer = solution.mergeTwoLists_recursive(l1, l2)
-    answer = solution.mergeTwoLists_iterative(l1, l2)
     print(answer)
