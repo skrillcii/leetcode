@@ -33,10 +33,13 @@ class Solution:
                 l2.next = merge2Lists(l1, l2.next)
                 return l2
 
-        if lists == [] or sum([len(x) for x in lists]) == 0:
-            return ListNode(None)
-        for i in range(0, len(lists) - 1):
-            lists[i + 1] = merge2Lists(lists[i], lists[i + 1])
+        if lists == []:
+            return None
+        elif len(lists) == 1:
+            return lists[0]
+        else:
+            for i in range(0, len(lists) - 1):
+                lists[i + 1] = merge2Lists(lists[i], lists[i + 1])
         return lists[-1]
 
 
@@ -46,6 +49,18 @@ if __name__ == '__main__':
     ipdb.set_trace()
 
     list_ = [[1, 4, 5], [1, 3, 4], [2, 6]]
+    lists = [LinkList(x).head for x in list_]
+    solution = Solution()
+    answer = solution.mergeKLists(lists)
+    print(answer)
+
+    list_ = []
+    lists = [LinkList(x).head for x in list_]
+    solution = Solution()
+    answer = solution.mergeKLists(lists)
+    print(answer)
+
+    list_ = [[]]
     lists = [LinkList(x).head for x in list_]
     solution = Solution()
     answer = solution.mergeKLists(lists)
