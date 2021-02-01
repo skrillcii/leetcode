@@ -33,6 +33,8 @@ class Solution:
                 l2.next = merge2Lists(l1, l2.next)
                 return l2
 
+        if lists == [] or sum([len(x) for x in lists]) == 0:
+            return ListNode(None)
         for i in range(0, len(lists) - 1):
             lists[i + 1] = merge2Lists(lists[i], lists[i + 1])
         return lists[-1]
